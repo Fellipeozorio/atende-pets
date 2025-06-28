@@ -4,11 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atende Pets</title>
+  <title>Atende Pets | Clínica Veterinária em BH - Estrela Dalva</title>
+  <meta name="description" content="Clínica Veterinária Atende Pets em Belo Horizonte. Consultas, vacinas e exames com atendimento de qualidade e preço justo.">
+  <meta name="keywords" content="Clínica Veterinária, Atende Pets, Vacina para pets, Exames veterinários BH, Veterinário Estrela Dalva">
+  <meta name="author" content="Atende Pets">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/fade-in.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -47,15 +51,41 @@
     </div>
   </section>
 
-  <section id="servicos" class="fade-in fade-in-delay-3">
+  <section id="servicos" class="fade-in fade-in-delay-2">
     <div class="container">
-      <h2>Serviços</h2>
-      <ul>
-        <li>Consultas</li>
-        <li>Vacinação</li>
-        <li>Controle parasitário</li>
-        <li>Atendimento emergencial</li>
-      </ul>
+      <h2>Nossos Serviços</h2>
+      <div class="servicos-grid">
+        <div class="card-servico">
+          <i class="fas fa-stethoscope"></i>
+          <h3>Clínica Geral</h3>
+          <p>Atendimento clínico completo com carinho e responsabilidade.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-scalpel"></i>
+          <h3>Cirurgias</h3>
+          <p>Procedimentos cirúrgicos com segurança e profissionais experientes.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-hospital"></i>
+          <h3>Internação</h3>
+          <p>Ambiente tranquilo e estrutura adequada para recuperação do seu pet.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-syringe"></i>
+          <h3>Vacinação</h3>
+          <p>Vacinas nacionais e importadas para proteção completa do seu pet.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-pills"></i>
+          <h3>Medicamentos</h3>
+          <p>Dispensação de medicamentos veterinários com orientação segura.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-store"></i>
+          <h3>Boutique Pet</h3>
+          <p>Produtos selecionados, roupinhas, brinquedos e muito mais!</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -105,11 +135,25 @@
     </div>
   </section>
 
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 | Atende Pets | CNPJ 37.797.482/0001-62</p>
+      <div class="social">
+        <a href="https://www.instagram.com/atendepets/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61576281224123" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper(".mySwiper", {
       loop: true,
       pagination: { el: ".swiper-pagination", clickable: true },
+    });
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
   </script>
 </body>
