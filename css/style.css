@@ -77,6 +77,7 @@ header {
 .hero-content {
   text-align: right;
   color: #fff;
+  max-width: 600px;
 }
 
 .hero-content h1 {
@@ -137,5 +138,14 @@ footer {
     justify-content: center;
     padding-right: 0;
     text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
