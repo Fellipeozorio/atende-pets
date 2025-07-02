@@ -11,7 +11,7 @@ body {
   background-color: #fff;
 }
 
-/* Header fixo */
+/* Header fixo e com sombra ao rolar */
 header {
   background-color: #fff;
   position: fixed;
@@ -23,7 +23,7 @@ header {
 }
 
 header.scrolled {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -116,91 +116,15 @@ header.scrolled {
   background-color: #1ebe5d;
 }
 
-/* Footer */
-footer {
-  background-color: #f9f9f9;
-  padding: 20px 5%;
+/* Estilização de seções */
+section {
+  padding: 80px 5% 60px 5%;
+}
+
+section h2 {
   text-align: center;
-  border-top: 1px solid #ccc;
-}
-
-footer .social a {
-  color: #1E3A5F;
-  margin: 0 10px;
-  font-size: 20px;
-  transition: color 0.3s ease;
-}
-
-footer .social a:hover {
-  color: #e74c3c;
-}
-
-/* Seção Serviços - Grid e Cards Modernos */
-.servicos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 20px 0;
-}
-
-.card-servico {
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 30px 25px;
-  text-align: center;
-  color: #1E3A5F;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-.card-servico i {
-  font-size: 48px;
-  margin-bottom: 18px;
-  color: #e74c3c;
-}
-
-.card-servico h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 12px;
-}
+  position: relative;
+  color
 
-.card-servico p {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  flex-grow: 1;
-}
-
-.card-servico:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsividade para menu hamburger */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 200px;
-    padding: 10px;
-    border-left: 1px solid #ccc;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
