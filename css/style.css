@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +11,7 @@ body {
   background-color: #fff;
 }
 
+/* Header fixo */
 header {
   background-color: #fff;
   position: fixed;
@@ -53,6 +55,7 @@ header {
   cursor: pointer;
 }
 
+/* Hero */
 .hero {
   margin-top: 80px;
   height: 90vh;
@@ -77,7 +80,6 @@ header {
 .hero-content {
   text-align: right;
   color: #fff;
-  max-width: 600px;
 }
 
 .hero-content h1 {
@@ -99,6 +101,7 @@ header {
   background-color: #1ebe5d;
 }
 
+/* Footer */
 footer {
   background-color: #f9f9f9;
   padding: 20px 5%;
@@ -112,6 +115,52 @@ footer {
   font-size: 20px;
 }
 
+/* Seção Serviços - Grid e Cards Modernos */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.card-servico {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 25px;
+  text-align: center;
+  color: #1E3A5F;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-servico i {
+  font-size: 48px;
+  margin-bottom: 18px;
+  color: #e74c3c;
+}
+
+.card-servico h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.card-servico p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.card-servico:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries para menu responsivo */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -138,14 +187,5 @@ footer {
     justify-content: center;
     padding-right: 0;
     text-align: center;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .header-container {
-    flex-direction: row;
-    justify-content: space-between;
   }
 }
