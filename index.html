@@ -1,188 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atende Pets | Clínica Veterinária em BH - Estrela Dalva</title>
-  <meta name="description" content="Clínica Veterinária Atende Pets em Belo Horizonte. Consultas, vacinas e exames com atendimento de qualidade e preço justo.">
-  <meta name="keywords" content="Clínica Veterinária, Atende Pets, Vacina para pets, Exames veterinários BH, Veterinário Estrela Dalva">
-  <meta name="author" content="Atende Pets">
-  <meta name="robots" content="index, follow">
-
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/fade-in.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <title>Atende Pets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-  <header>
-    <div class="header-container">
-      <img src="img/logo.png" alt="Atende Pets Logo" class="logo" />
-      
-      <div class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-
-      <ul class="menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#clinica">A Clínica</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#exames">Exames</a></li>
-        <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#contato">Fale conosco</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-      </ul>
+  <header class="site-header">
+    <div class="container header-container">
+      <img src="logo.png" alt="Atende Pets" class="logo">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#clinica">A Clínica</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#exames">Exames</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </nav>
       <div class="social-icons">
-        <a href="https://www.instagram.com/atendepets/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61576281224123" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/5531984073910" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><img src="instagram-icon.svg" alt="Instagram"></a>
+        <a href="#"><img src="facebook-icon.svg" alt="Facebook"></a>
+        <a href="#"><img src="whatsapp-icon.svg" alt="WhatsApp"></a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero fade-in fade-in-delay-1" 
-    style="background-image: url('img/HERO.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center right; background-color: #f8f9fa; padding: 60px 0; min-height: 90vh; display: flex; align-items: center;">
-    <div class="hero-content" style="margin-left: auto; margin-right: 5%; text-align: right; max-width: 600px;">
-      <h1 style="color: white; font-size: 32px; margin-bottom: 20px;">
-        Cuidamos do seu pet com amor e responsabilidade
-      </h1>
-      <a href="https://wa.me/5531984073910" target="_blank" class="btn" 
-         style="background-color: #25D366; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
-        Fale conosco
-      </a>
-    </div>
-  </section>
-
-  <section id="clinica" class="fade-in fade-in-delay-2">
-    <div class="container">
-      <h2>A Clínica</h2>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="img/infraestrutura.jpg" alt="Clínica 1" /></div>
-          <div class="swiper-slide"><img src="img/servicos.jpg" alt="Clínica 2" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <p>Ambiente acolhedor, equipe qualificada e estrutura moderna para o cuidado com seu pet.</p>
-    </div>
-  </section>
-
-  <section id="servicos" class="fade-in fade-in-delay-2">
-    <div class="container">
-      <h2>Nossos Serviços</h2>
-      <div class="servicos-grid">
-        <a href="clinica.html" class="card-servico">
-          <i class="fas fa-stethoscope"></i>
-          <h3>Clínica Geral</h3>
-          <p>Atendimento clínico completo com carinho e responsabilidade.</p>
-        </a>
-        <a href="cirurgia.html" class="card-servico">
-          <i class="fas fa-scalpel"></i>
-          <h3>Cirurgias</h3>
-          <p>Procedimentos cirúrgicos com segurança e profissionais experientes.</p>
-        </a>
-        <a href="internacao.html" class="card-servico">
-          <i class="fas fa-hospital"></i>
-          <h3>Internação</h3>
-          <p>Ambiente tranquilo e estrutura adequada para recuperação do seu pet.</p>
-        </a>
-        <a href="vacinacao.html" class="card-servico">
-          <i class="fas fa-syringe"></i>
-          <h3>Vacinação</h3>
-          <p>Vacinas nacionais e importadas para proteção completa do seu pet.</p>
-        </a>
-        <a href="medicamentos.html" class="card-servico">
-          <i class="fas fa-pills"></i>
-          <h3>Medicamentos</h3>
-          <p>Dispensação de medicamentos veterinários com orientação segura.</p>
-        </a>
-        <a href="boutique.html" class="card-servico">
-          <i class="fas fa-store"></i>
-          <h3>Boutique Pet</h3>
-          <p>Produtos selecionados, roupinhas, brinquedos e muito mais!</p>
-        </a>
+  <section class="hero" id="inicio">
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>Cuidamos do seu pet com amor e responsabilidade</h1>
+        <a href="#contato" class="btn-hero">Fale Conosco</a>
       </div>
     </div>
   </section>
 
-  <section id="exames" class="fade-in fade-in-delay-4">
+  <section class="section" id="clinica">
     <div class="container">
-      <h2>Exames</h2>
-      <p>Contamos com equipamentos modernos para exames laboratoriais e de imagem.</p>
+      <h2 class="section-title">A Clínica</h2>
+      <p>A Atende Pets oferece estrutura moderna, profissionais dedicados e atendimento humanizado para o seu pet.</p>
     </div>
   </section>
 
-  <section id="especialidades" class="fade-in fade-in-delay-1">
+  <section class="section" id="servicos">
     <div class="container">
-      <h2>Especialidades</h2>
-      <ul>
-        <li>Clínica médica</li>
-        <li>Cirurgia</li>
-        <li>Odontologia veterinária</li>
-        <li>Dermatologia</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="depoimentos" class="fade-in fade-in-delay-2">
-    <div class="container">
-      <h2>O que dizem nossos clientes</h2>
-      <div class="depoimentos">
-        <blockquote>“Minha cachorrinha foi super bem atendida. Atendimento excelente e preços justos!”<br><strong>– Mariany</strong></blockquote>
-        <blockquote>“Recomendo muito! Atendimento e estrutura impecáveis.”<br><strong>– Hugo</strong></blockquote>
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="cards">
+        <div class="card">Clínica Geral</div>
+        <div class="card">Cirurgias</div>
+        <div class="card">Internação</div>
+        <div class="card">Vacinação</div>
+        <div class="card">Medicamentos</div>
+        <div class="card">Boutique Pet</div>
       </div>
     </div>
   </section>
 
-  <section id="contato" class="fade-in fade-in-delay-3">
+  <section class="section" id="exames">
     <div class="container">
-      <h2>Fale conosco</h2>
-      <a href="https://wa.me/5531984073910" class="btn-whatsapp" target="_blank">
-        Fale conosco no WhatsApp: (31) 98407-3910
-      </a>
+      <h2 class="section-title">Exames</h2>
+      <p>Oferecemos diversos exames laboratoriais e de imagem para diagnóstico preciso e rápido.</p>
     </div>
   </section>
 
-  <section id="localizacao" class="fade-in fade-in-delay-4">
+  <section class="section" id="especialidades">
     <div class="container">
-      <h2>Localização</h2>
-      <p><strong>Endereço:</strong> R. Barroso Neto, 394 – Estrela Dalva, Belo Horizonte – MG, 30570-670</p>
-      <iframe src="https://www.google.com/maps?q=R.%20Barroso%20Neto,%20394%20-%20Estrela%20Dalva,%20Belo%20Horizonte%20-%20MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <h2 class="section-title">Especialidades</h2>
+      <p>Contamos com especialistas em diversas áreas como dermatologia, cardiologia, ortopedia e muito mais.</p>
     </div>
   </section>
 
-  <footer>
+  <section class="section" id="contato">
     <div class="container">
-      <p>&copy; 2025 | Atende Pets | CNPJ 37.797.482/0001-62</p>
-      <div class="social">
-        <a href="https://www.instagram.com/atendepets/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61576281224123" target="_blank"><i class="fab fa-facebook"></i></a>
-      </div>
+      <h2 class="section-title">Fale Conosco</h2>
+      <p>Entre em contato por telefone, WhatsApp ou redes sociais. Estamos prontos para te atender!</p>
+    </div>
+  </section>
+
+  <section class="section" id="localizacao">
+    <div class="container">
+      <h2 class="section-title">Localização</h2>
+      <p>Estamos localizados em um ponto de fácil acesso para você e seu pet.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Atende Pets | CNPJ 00.000.000/0001-00</p>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      pagination: { el: ".swiper-pagination", clickable: true },
-    });
-
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Menu hamburger
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.querySelector('.menu');
-
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
-
 </body>
+
 </html>
+
