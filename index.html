@@ -32,18 +32,50 @@
             opacity: 1 !important; /* O indicador ativo fica totalmente visível */
             background-color: var(--bs-primary) !important; /* Garante que o ativo também seja azul */
         }
+
+        /* CSS Adicional para o Destaque do Menu Ativo */
+        #menu .nav-link.active {
+            background-color: var(--bs-primary); /* Fundo azul do Bootstrap */
+            color: white !important; /* Texto branco */
+            border-radius: 0.25rem; /* Borda arredondada */
+            padding: 0.5rem 1rem; /* Padding para a "caixa" */
+        }
+
+        /* Estilo para garantir que o nav-link padrão não se confunda */
+        #menu .nav-link:not(.active) {
+            color: var(--bs-body-color); /* Cor padrão do texto do Bootstrap */
+        }
+
+        /* Ajuste para garantir que o logo e o botão de contato fiquem nos cantos */
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Ajustes para o menu colapsado em mobile */
+        @media (max-width: 767.98px) { /* Largura máxima para mobile */
+            .navbar-collapse {
+                text-align: center; /* Centraliza itens do menu colapsado */
+            }
+            .navbar-nav {
+                width: 100%; /* Garante que o menu colapsado ocupe toda a largura */
+            }
+            #menu .nav-item {
+                margin: 0.5rem 0; /* Espaçamento vertical para itens do menu colapsado */
+            }
+        }
     </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#menu">
 
     <nav class="navbar navbar-expand-md bg-white sticky-top py-3 mb-5 border-bottom">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="/" class="navbar-brand">
+        <div class="container"> <a href="/" class="navbar-brand">
                 <img src="img/logo.png" alt="Logo Atende Pets" height="50">
             </a>
             
-            <button class="navbar-toggler d-md-none mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -57,7 +89,7 @@
                 </ul>
             </div>
             
-            <div class="d-none d-md-flex align-items-center gap-3">
+            <div class="d-none d-md-flex align-items-center gap-3 ms-auto"> 
                 <a href="https://www.instagram.com/atendepets/" target="_blank" class="text-dark">
                     <i class="bi bi-instagram fs-4"></i>
                 </a>
@@ -66,330 +98,331 @@
                 </a>
             </div>
 
-            <div class="d-flex align-items-center ms-auto ms-md-3"> <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
+            <div class="d-flex align-items-center ms-md-3"> 
+                <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
                     target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
                 </a>    
             </div>
         </div>
     </nav>
     <section class="mb-5">
-            <div class="row text-center text-md-start">
-                <div class="col-md-6 mt-3">
-                    <h2 class="mt-5 fs-5"> Aqui o seu amigo é tratado com carinho</h2>
+            <div class="container"> <div class="row text-center text-md-start">
+                    <div class="col-md-6 mt-3">
+                        <h2 class="mt-5 fs-5"> Aqui o seu amigo é tratado com carinho</h2>
 
-                    <h1 class="display-2 fw-bold">Atende Pets</h1>
-                    <p class="mt-4"> Na Clínica Veterinária Atende Pets, o bem-estar e a
-                        saúde dos
-                        seus
-                        animais de estimação são nossa prioridade. Localizada no coração da cidade, nossa clínica
-                        oferece um ambiente acolhedor e amigável, onde nossos profissionais altamente qualificados se
-                        dedicam a fornecer cuidados excepcionais para seus amigos peludos.</p>
-                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
-                    target="_blank" class="mt-5 w-35 p-4 btn btn-primary">Fale com a nossa equipe!</a>
+                        <h1 class="display-2 fw-bold">Atende Pets</h1>
+                        <p class="mt-4"> Na Clínica Veterinária Atende Pets, o bem-estar e a
+                            saúde dos
+                            seus
+                            animais de estimação são nossa prioridade. Localizada no coração da cidade, nossa clínica
+                            oferece um ambiente acolhedor e amigável, onde nossos profissionais altamente qualificados se
+                            dedicam a fornecer cuidados excepcionais para seus amigos peludos.</p>
+                        <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
+                        target="_blank" class="mt-5 w-35 p-4 btn btn-primary">Fale com a nossa equipe!</a>
+                    </div>
+                    <div class="col-md-6">
+                        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                            type="module"></script><dotlottie-player class="m-0 m-auto float-none float-md-end"
+                            src="https://lottie.host/6663d84e-894d-4cfc-9e34-a7ca5383f092/VAgahkv33p.json"
+                            background="transparent" speed="1" style="max-width: 70%;" direction="1" playMode="normal" loop
+                            autoplay></dotlottie-player>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                        type="module"></script><dotlottie-player class="m-0 m-auto float-none float-md-end"
-                        src="https://lottie.host/6663d84e-894d-4cfc-9e34-a7ca5383f092/VAgahkv33p.json"
-                        background="transparent" speed="1" style="max-width: 70%;" direction="1" playMode="normal" loop
-                        autoplay></dotlottie-player>
-                </div>
-        </section>
+            </div> </section>
 
         <section id="servicos" class="text-center py-5 my-5">
-            <div class="row pt-5 mt-5">
-                <div class="col-12">
-                    <h2 class="display-5 fw-bold">Serviços</h2>
+            <div class="container"> <div class="row pt-5 mt-5">
+                    <div class="col-12">
+                        <h2 class="display-5 fw-bold">Serviços</h2>
+                    </div>
                 </div>
-            </div>
-            
-            <div id="carouselServicosDesktop" class="carousel slide d-none d-md-block mt-5" data-bs-ride="carousel" data-bs-interval="5000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/atendimento.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Atendimento</h2>
-                                <p>Protegemos seu pet com um calendário de vacinação atualizado.</p>
+                
+                <div id="carouselServicosDesktop" class="carousel slide d-none d-md-block mt-5" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/atendimento.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Atendimento</h2>
+                                    <p>Protegemos seu pet com um calendário de vacinação atualizado.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/exame.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Exames</h2>
+                                    <p>Atendimento veterinário durante 24 horas para emergências.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/cirurgia.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Cirurgias</h2>
+                                    <p>Cirurgias para cães e gatos.</p>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/exame.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Exames</h2>
-                                <p>Atendimento veterinário durante 24 horas para emergências.</p>
+                        </div>
+                
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/vacina.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Vacinas</h2>
+                                    <p>Vacinas para cães e gatos com controle veterinário.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/farmacia.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Medicamentos</h2>
+                                    <p>Medicamentos para diversas condições.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/racao.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Rações</h2>
+                                    <p>Rações para diferentes fases e raças.</p>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/cirurgia.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Cirurgias</h2>
-                                <p>Cirurgias para cães e gatos.</p>
+                        </div>
+                
+                        <div class="carousel-item">
+                            <div class="row justify-content-center text-center"> <div> <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/acessorios.PNG" style="width:150px;height:150px;object-fit:contain;">
+                                    <h2 class="mt-3">Acessórios</h2>
+                                    <p>Brinquedos, roupas e muito mais.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-            
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/vacina.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Vacinas</h2>
-                                <p>Vacinas para cães e gatos com controle veterinário.</p>
-                            </div>
-                            <div class="col-md-4">
-                                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/farmacia.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Medicamentos</h2>
-                                <p>Medicamentos para diversas condições.</p>
-                            </div>
-                            <div class="col-md-4">
-                                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/racao.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Rações</h2>
-                                <p>Rações para diferentes fases e raças.</p>
-                            </div>
+                
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
+                </div>
+                
+                <div id="carouselServicosMobile" class="carousel slide d-md-none mt-5" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="6"></button>
+                    </div>
+                
+                    <div class="carousel-inner">
+                        <div class="carousel-item active text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/atendimento.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Atendimento</h2>
+                            <p>Protegemos seu pet com um calendário de vacinação atualizado.</p>
+                        </div>
+                
+                        <div class="carousel-item text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/exame.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Exames</h2>
+                            <p>Atendimento veterinário durante 24 horas para emergências.</p>
+                        </div>
+                
+                        <div class="carousel-item text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/cirurgia.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Cirurgias</h2>
+                            <p>Cirurgias para cães e gatos.</p>
+                        </div>
+                
+                        <div class="carousel-item text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/vacina.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Vacinas</h2>
+                            <p>Vacinas para cães e gatos com controle veterinário.</p>
+                        </div>
+                
+                        <div class="carousel-item text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/farmacia.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Medicamentos</h2>
+                            <p>Medicamentos para diversas condições.</p>
+                        </div>
+                
+                        <div class="carousel-item text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/racao.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Rações</h2>
+                            <p>Rações para diferentes fases e raças.</p>
+                        </div>
+                
+                        <div class="carousel-item text-center">
+                            <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/acessorios.PNG" style="width:150px;height:150px;object-fit:contain;">
+                            <h2 class="mt-3">Acessórios</h2>
+                            <p>Brinquedos, roupas e muito mais.</p>
                         </div>
                     </div>
-            
-                    <div class="carousel-item">
-                        <div class="row justify-content-center text-center"> <div> <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/acessorios.PNG" style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3">Acessórios</h2>
-                                <p>Brinquedos, roupas e muito mais.</p>
-                            </div>
-                        </div>
-                    </div>
+                
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicosMobile" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselServicosMobile" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
                 </div>
-            
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselServicosDesktop" data-bs-slide="next">
-                    <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
-            </div>
-            
-            <div id="carouselServicosMobile" class="carousel slide d-md-none mt-5" data-bs-ride="carousel" data-bs-interval="5000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="4"></button>
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="5"></button>
-                    <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="6"></button>
-                </div>
-            
-                <div class="carousel-inner">
-                    <div class="carousel-item active text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/atendimento.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Atendimento</h2>
-                        <p>Protegemos seu pet com um calendário de vacinação atualizado.</p>
-                    </div>
-            
-                    <div class="carousel-item text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/exame.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Exames</h2>
-                        <p>Atendimento veterinário durante 24 horas para emergências.</p>
-                    </div>
-            
-                    <div class="carousel-item text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/cirurgia.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Cirurgias</h2>
-                        <p>Cirurgias para cães e gatos.</p>
-                    </div>
-            
-                    <div class="carousel-item text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/vacina.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Vacinas</h2>
-                        <p>Vacinas para cães e gatos com controle veterinário.</p>
-                    </div>
-            
-                    <div class="carousel-item text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/farmacia.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Medicamentos</h2>
-                        <p>Medicamentos para diversas condições.</p>
-                    </div>
-            
-                    <div class="carousel-item text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/racao.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Rações</h2>
-                        <p>Rações para diferentes fases e raças.</p>
-                    </div>
-            
-                    <div class="carousel-item text-center">
-                        <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/acessorios.PNG" style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3">Acessórios</h2>
-                        <p>Brinquedos, roupas e muito mais.</p>
-                    </div>
-                </div>
-            
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicosMobile" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselServicosMobile" data-bs-slide="next">
-                    <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
-            </div>
-        </section>
+            </div> </section>
 
         <section id="precos" class="pt-5 mt-5">
-            <div class="pricing-header pt-5 mt-5 text-center">
-                <h2 class="display-5 fw-bold"> Preços</h2>
-                <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential
-                    customers
-                    with this Bootstrap example. It’s built with default Bootstrap components and utilities with little
-                    customization.</p>
-            </div>
+            <div class="container"> <div class="pricing-header pt-5 mt-5 text-center">
+                    <h2 class="display-5 fw-bold"> Preços</h2>
+                    <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential
+                        customers
+                        with this Bootstrap example. It’s built with default Bootstrap components and utilities with little
+                        customization.</p>
+                </div>
 
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">Vacinação</h4>
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                            <div class="card-header py-3 text-bg-primary border-primary">
+                                <h4 class="my-0 fw-normal">Vacinação</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">R$80,00</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Vacina polivalente para cães e gatos</li>
+
+                                </ul>
+                                <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">R$80,00</h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Vacina polivalente para cães e gatos</li>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                            <div class="card-header py-3 text-bg-primary border-primary">
+                                <h4 class="my-0 fw-normal">Emergências</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">R$200,00</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Atendimento veterinário emergencial 24h</li>
 
-                            </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                                </ul>
+                                <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                            <div class="card-header py-3 text-bg-primary border-primary">
+                                <h4 class="my-0 fw-normal">Raio-X</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">R$150,00</h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Exame de imagem digital</li>
+                                </ul>
+                                <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">Emergências</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">R$200,00</h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Atendimento veterinário emergencial 24h</li>
-
-                            </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">Raio-X</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">R$150,00</h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Exame de imagem digital</li>
-                            </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </div> </section>
         <section id="faq" class="py-5 my-5">
-            <div class="row pt-5 mt-5">
-                <div class="col-12 text-center">
-                    <h2 class="display-5 fw-bold">Perguntas Frequentes</h2>
+            <div class="container"> <div class="row pt-5 mt-5">
+                    <div class="col-12 text-center">
+                        <h2 class="display-5 fw-bold">Perguntas Frequentes</h2>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mt-3 mt-5">
-                <div class="col-12">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Quais documentos devo trazer para a consulta do meu pet?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Para a consulta do seu pet, é importante trazer a carteira de vacinação atualizada,
-                                    qualquer histórico médico prévio, e uma lista de medicamentos ou suplementos que seu
-                                    pet esteja tomando. Isso nos ajudará a fornecer um atendimento mais preciso e
-                                    eficiente.
+                <div class="row mt-3 mt-5">
+                    <div class="col-12">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Quais documentos devo trazer para a consulta do meu pet?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Para a consulta do seu pet, é importante trazer a carteira de vacinação atualizada,
+                                        qualquer histórico médico prévio, e uma lista de medicamentos ou suplementos que seu
+                                        pet esteja tomando. Isso nos ajudará a fornecer um atendimento mais preciso e
+                                        eficiente.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    O que fazer em caso de emergência fora do horário de funcionamento da clínica?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Nossa clínica oferece atendimento emergencial 24 horas. Em caso de emergência,
-                                    dirija-se diretamente à nossa clínica ou ligue para nosso número de emergência (XX)
-                                    XXXX-XXXX. Nossa equipe está pronta para atender seu pet a qualquer hora do dia ou
-                                    da noite.
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        O que fazer em caso de emergência fora do horário de funcionamento da clínica?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Nossa clínica oferece atendimento emergencial 24 horas. Em caso de emergência,
+                                        dirija-se diretamente à nossa clínica ou ligue para nosso número de emergência (XX)
+                                        XXXX-XXXX. Nossa equipe está pronta para atender seu pet a qualquer hora do dia ou
+                                        da noite.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Quais são as formas de pagamento aceitas na clínica?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Aceitamos diversas formas de pagamento para sua conveniência, incluindo dinheiro,
-                                    cartões de crédito e débito, e transferências bancárias. Também oferecemos planos de
-                                    pagamento parcelado para serviços de maior valor, como cirurgias e tratamentos
-                                    prolongados. Para mais detalhes, consulte nossa recepção.
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Quais são as formas de pagamento aceitas na clínica?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Aceitamos diversas formas de pagamento para sua conveniência, incluindo dinheiro,
+                                        cartões de crédito e débito, e transferências bancárias. Também oferecemos planos de
+                                        pagamento parcelado para serviços de maior valor, como cirurgias e tratamentos
+                                        prolongados. Para mais detalhes, consulte nossa recepção.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </div> </section>
 
         <section id="contato" class="py-5 my-5">
-            <div class="row pt-5 mt-5">
-                <div class="col-12 text-center">
-                    <h2 class="display-5 fw-bold">Contato</h2>
-                </div>
-            </div>
-
-            <div class="row align-items-md-stretch text-center">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-body-tertiary border rounded-3 mt-5">
-                        <h2>Fale Conosco</h2>
-                        <p class="mt-5">Na Clínica Veterinária Atende Pets, estamos sempre à disposição para atender você
-                            e seu pet da melhor maneira possível. Seja para agendar uma consulta, esclarecer dúvidas
-                            sobre nossos serviços ou receber orientações sobre cuidados com seu animal de estimação,
-                            nossa equipe está pronta para ajudar.</p>
-                        <p> (31) 98407-3910 | (31) 3582-9158 </p>
-                        <p>atendepetsltda@gmail.com </p>
-                        <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" target="_blank" class="mt-3 w-35 p-3 btn btn-success text-center text-decoration-none d-inline-block">
-                            Chame no WhatsApp <i class="bi bi-whatsapp fs-4"></i>
-                        </a>
+            <div class="container"> <div class="row pt-5 mt-5">
+                    <div class="col-12 text-center">
+                        <h2 class="display-5 fw-bold">Contato</h2>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-body-tertiary border rounded-3 mt-5 bg-light">
-                        <h2> Endereço </h2>
-                        <p>Rua Barroso Neto, 394 - Estrela Dalva - Belo Horizonte/MG </p>
 
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.630326730169!2d-43.9741723251484!3d-19.96298683933584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6970056a6a813%3A0xa88f1a7eef89a3f6!2sAtende%20Pets%20-%20Cl%C3%ADnica%20Veterin%C3%A1ria!5e1!3m2!1spt-BR!2sbr!4v1752202512619!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="row align-items-md-stretch text-center">
+                    <div class="col-md-6">
+                        <div class="h-100 p-5 bg-body-tertiary border rounded-3 mt-5">
+                            <h2>Fale Conosco</h2>
+                            <p class="mt-5">Na Clínica Veterinária Atende Pets, estamos sempre à disposição para atender você
+                                e seu pet da melhor maneira possível. Seja para agendar uma consulta, esclarecer dúvidas
+                                sobre nossos serviços ou receber orientações sobre cuidados com seu animal de estimação,
+                                nossa equipe está pronta para ajudar.</p>
+                            <p> (31) 98407-3910 | (31) 3582-9158 </p>
+                            <p>atendepetsltda@gmail.com </p>
+                            <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" target="_blank" class="mt-3 w-35 p-3 btn btn-success text-center text-decoration-none d-inline-block">
+                                Chame no WhatsApp <i class="bi bi-whatsapp fs-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="h-100 p-5 bg-body-tertiary border rounded-3 mt-5 bg-light">
+                            <h2> Endereço </h2>
+                            <p>Rua Barroso Neto, 394 - Estrela Dalva - Belo Horizonte/MG </p>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.630326730169!2d-43.9741723251484!3d-19.96298683933584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6970056a6a813%3A0xa88f1a7eef89a3f6!2sAtende%20Pets%20-%20Cl%C3%ADnica%20Veterin%C3%A1ria!5e1!3m2!1spt-BR!2sbr!4v1752202512619!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </section>
+            </div> </section>
 
         <footer class="container mt-5 p-5">
             <p class="float-end"><a href="#">Ir para o topo</a></p>
