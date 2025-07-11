@@ -212,11 +212,11 @@
               </div>
         
               <!-- Slide 7 -->
-              <div class="carousel-item text-center">
-                <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/acessorios.PNG" style="width:150px;height:150px;object-fit:contain;">
-                <h2 class="mt-3">Acessórios</h2>
-                <p>Brinquedos, roupas e muito mais.</p>
-              </div>
+            <div class="col-md-4 mx-auto">
+              <img class="rounded-circle border shadow p-3 mx-auto d-block" src="img/acessorios.PNG" style="width:150px;height:150px;object-fit:contain;">
+              <h2 class="mt-3">Acessórios</h2>
+              <p>Brinquedos, roupas e muito mais.</p>
+            </div>
             </div>
         
             <!-- Navegação -->
@@ -239,19 +239,19 @@
           
           /* Indicadores personalizados */
           .carousel-indicators button {
-            width: 12px; /* Aumenta um pouco o tamanho para ficarem mais visíveis */
-            height: 12px;
-            border-radius: 50%; /* Garante que sejam redondos */
-            background-color: var(--bs-primary); /* Usa a cor primária do Bootstrap (azul) */
-            opacity: 0.3; /* Deixa os indicadores inativos sombreados (30% de opacidade) */
-            border: none; /* Remove a borda padrão do Bootstrap */
-            margin: 0 5px; /* Adiciona um pequeno espaçamento entre eles */
-            transition: opacity 0.3s ease; /* Adiciona uma transição suave para o efeito de opacidade */
+            width: 12px !important; /* Força o tamanho */
+            height: 12px !important; /* Força o tamanho */
+            border-radius: 50% !important; /* Garante que sejam redondos */
+            background-color: var(--bs-primary) !important; /* Usa a cor primária do Bootstrap (azul) */
+            opacity: 0.3 !important; /* Deixa os indicadores inativos sombreados (30% de opacidade) */
+            border: none !important; /* Remove a borda padrão do Bootstrap */
+            margin: 0 5px !important; /* Adiciona um pequeno espaçamento entre eles */
+            transition: opacity 0.3s ease !important; /* Adiciona uma transição suave para o efeito de opacidade */
           }
           
           .carousel-indicators .active {
-            opacity: 1; /* O indicador ativo fica totalmente visível */
-            background-color: var(--bs-primary); /* Garante que o ativo também seja azul */
+            opacity: 1 !important; /* O indicador ativo fica totalmente visível */
+            background-color: var(--bs-primary) !important; /* Garante que o ativo também seja azul */
           }
         </style>
         
