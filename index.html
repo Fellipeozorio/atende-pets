@@ -46,50 +46,53 @@
             color: var(--bs-body-color); /* Cor padrão do texto do Bootstrap */
         }
 
-        /* Ajuste para garantir que o logo e o botão de contato fiquem nos cantos */
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         /* Ajustes para o menu colapsado em mobile */
-        @media (max-width: 767.98px) { /* Largura máxima para mobile */
-            /* Botão Hamburguer no canto superior esquerdo */
-            .navbar-toggler {
-                margin-right: auto; /* Empurra o toggler para a esquerda */
+        @media (max-width: 767.98px) { /* Largura máxima para mobile (sm) */
+            /* Controla a disposição dos elementos na navbar em mobile */
+            .navbar .container {
+                display: flex;
+                flex-wrap: nowrap; /* Impede que os itens quebrem linha */
+                justify-content: space-between; /* Distribui os itens */
+                align-items: center;
             }
 
-            /* Alinha os itens do menu à esquerda quando o menu está aberto */
+            /* Garante que o menu colapsado ocupe a largura total e os itens se alinhem à esquerda */
             .navbar-collapse {
                 text-align: left; /* Alinha o texto à esquerda */
+                order: 4; /* Garante que o menu apareça abaixo dos outros itens, se necessário */
+                flex-basis: 100%; /* Ocupa toda a largura abaixo dos outros itens */
             }
+
             .navbar-nav {
                 width: 100%; /* Garante que o menu colapsado ocupe toda a largura */
             }
+
             #menu .nav-item {
                 margin: 0.5rem 0; /* Espaçamento vertical para itens do menu colapsado */
             }
 
-            /* Garante que o botão de contato e logo se mantenham na barra */
-            /* Flexbox para alinhar logo, toggler e botão de contato na navbar-brand */
+            /* Posiciona a logo no canto esquerdo */
             .navbar-brand {
-                display: flex;
-                align-items: center;
-                width: 100%; /* Ocupa a largura total para posicionamento */
-                justify-content: space-between; /* Espaço entre os elementos */
+                order: 1; /* Primeira ordem no flexbox */
+                margin-right: auto !important; /* Empurra para a esquerda */
+                padding-left: 0; /* Remove padding extra se houver */
+            }
+            .navbar-brand img {
+                margin: 0; /* Remove margens internas na imagem */
             }
 
-            /* Move a logo para o centro (opcional, se quiser entre o toggler e o botão) */
-            .navbar-brand img {
-                margin-right: auto; /* Empurra a imagem para a direita, dando espaço ao toggler */
-                margin-left: auto; /* Empurra a imagem para a esquerda, centralizando-a */
+            /* Posiciona o botão de contato no centro */
+            .btn-contact-mobile {
+                order: 2; /* Segunda ordem no flexbox */
+                margin-left: auto !important; /* Empurra para o centro */
+                margin-right: auto !important; /* Empurra para o centro */
             }
-            
-            /* Garante que o botão de contato fique à direita na navbar */
-            .navbar .ms-md-3 {
-                margin-left: auto !important; /* Força o alinhamento à direita */
-                margin-right: 0 !important; /* Remove margem extra à direita, se houver */
+
+            /* Posiciona o botão hamburguer no canto direito */
+            .navbar-toggler {
+                order: 3; /* Terceira ordem no flexbox */
+                margin-left: auto !important; /* Empurra para a direita */
+                margin-right: 0; /* Garante que não haja margem à direita */
             }
         }
 
@@ -104,13 +107,19 @@
 
     <nav class="navbar navbar-expand-md bg-white sticky-top py-3 mb-5 border-bottom">
         <div class="container"> 
-            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <a class="navbar-brand">
                 <img src="img/logo.png" alt="Logo Atende Pets" height="50">
             </a>
+            
+            <div class="d-flex align-items-center ms-md-3 btn-contact-mobile"> 
+                <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
+                    target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
+                </a>    
+            </div>
+
+            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             
             <div class="d-none d-md-flex align-items-center gap-3 ms-auto"> 
                 <a href="https://www.instagram.com/atendepets/" target="_blank" class="text-dark">
@@ -121,14 +130,9 @@
                 </a>
             </div>
 
-            <div class="d-flex align-items-center ms-md-3"> 
-                <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
-                    target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
-                </a>    
-            </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul id="menu" class="navbar-nav w-100"> <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="scrollToTop(event)">Home</a></li>
+                <ul id="menu" class="navbar-nav w-100">
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="scrollToTop(event)">Home</a></li>
                     <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li class="nav-item"><a href="#precos" class="nav-link">Preços</a></li>
                     <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
@@ -479,10 +483,10 @@
 
     <script>
         function scrollToTop(event) {
-            event.preventDefault(); // Impede o comportamento padrão do link (#)
+            event.preventDefault(); 
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // Rola suavemente
+                behavior: 'smooth' 
             });
         }
     </script>
