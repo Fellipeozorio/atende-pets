@@ -46,53 +46,80 @@
             color: var(--bs-body-color); /* Cor padrão do texto do Bootstrap */
         }
 
-        /* Ajustes para o menu colapsado em mobile */
-        @media (max-width: 767.98px) { /* Largura máxima para mobile (sm) */
-            /* Controla a disposição dos elementos na navbar em mobile */
-            .navbar .container {
+        /* Desktop: Logo esquerda, Menu centralizado, Botão/Redes direita */
+        @media (min-width: 768px) { /* A partir de md (768px) */
+            .navbar .container-desktop {
                 display: flex;
-                flex-wrap: nowrap; /* Impede que os itens quebrem linha */
-                justify-content: space-between; /* Distribui os itens */
+                justify-content: space-between;
                 align-items: center;
+                width: 100%; /* Garante que o container ocupe a largura total */
             }
 
-            /* Garante que o menu colapsado ocupe a largura total e os itens se alinhem à esquerda */
-            .navbar-collapse {
-                text-align: left; /* Alinha o texto à esquerda */
-                order: 4; /* Garante que o menu apareça abaixo dos outros itens, se necessário */
-                flex-basis: 100%; /* Ocupa toda a largura abaixo dos outros itens */
+            .navbar-brand-desktop {
+                margin-right: auto; /* Empurra os outros elementos para a direita */
             }
 
-            .navbar-nav {
-                width: 100%; /* Garante que o menu colapsado ocupe toda a largura */
+            #navbarNavDesktop {
+                flex-grow: 1; /* Permite que o menu ocupe o espaço central */
+                justify-content: center; /* Centraliza os itens do menu */
             }
 
             #menu .nav-item {
-                margin: 0.5rem 0; /* Espaçamento vertical para itens do menu colapsado */
+                margin: 0 1rem; /* Espaçamento entre os itens do menu desktop */
             }
 
-            /* Posiciona a logo no canto esquerdo */
-            .navbar-brand {
-                order: 1; /* Primeira ordem no flexbox */
-                margin-right: auto !important; /* Empurra para a esquerda */
-                padding-left: 0; /* Remove padding extra se houver */
+            .navbar-cta-social-desktop {
+                margin-left: auto; /* Empurra para a direita */
+                display: flex;
+                align-items: center;
+                gap: 1rem; /* Espaçamento entre o botão e os ícones */
             }
-            .navbar-brand img {
-                margin: 0; /* Remove margens internas na imagem */
+        }
+
+        /* Mobile: Logo esquerda, Botão Contato centro, Hambúrguer direita */
+        @media (max-width: 767.98px) { /* Até sm (767.98px) */
+            .navbar .container-mobile {
+                display: flex;
+                justify-content: space-between; /* Espaço entre logo, contato, hambúrguer */
+                align-items: center;
+                width: 100%;
             }
 
-            /* Posiciona o botão de contato no centro */
+            /* Esconde os elementos do desktop em mobile */
+            .navbar-desktop-only {
+                display: none !important;
+            }
+
+            /* Ajustes para a logo mobile */
+            .navbar-brand-mobile {
+                order: 1; /* Logo primeiro */
+                margin-right: auto; /* Empurra para a esquerda */
+            }
+
+            /* Ajustes para o botão de contato mobile */
             .btn-contact-mobile {
-                order: 2; /* Segunda ordem no flexbox */
-                margin-left: auto !important; /* Empurra para o centro */
-                margin-right: auto !important; /* Empurra para o centro */
+                order: 2; /* Botão de contato no meio */
+                margin-left: auto; /* Centraliza */
+                margin-right: auto; /* Centraliza */
             }
 
-            /* Posiciona o botão hamburguer no canto direito */
-            .navbar-toggler {
-                order: 3; /* Terceira ordem no flexbox */
-                margin-left: auto !important; /* Empurra para a direita */
-                margin-right: 0; /* Garante que não haja margem à direita */
+            /* Ajustes para o botão hambúrguer */
+            .navbar-toggler-mobile {
+                order: 3; /* Hambúrguer por último, à direita */
+                margin-left: auto; /* Empurra para a direita */
+            }
+
+            /* Menu colapsado alinhado à esquerda */
+            #navbarNavMobile {
+                order: 4; /* Garante que o menu apareça abaixo dos elementos principais */
+                flex-basis: 100%; /* Ocupa a largura total */
+            }
+            #navbarNavMobile .navbar-nav {
+                width: 100%;
+            }
+            #navbarNavMobile .nav-item {
+                text-align: left; /* Alinha o texto do item à esquerda */
+                margin: 0.5rem 0; /* Espaçamento vertical */
             }
         }
 
@@ -107,30 +134,23 @@
 
     <nav class="navbar navbar-expand-md bg-white sticky-top py-3 mb-5 border-bottom">
         <div class="container"> 
-            <a class="navbar-brand">
-                <img src="img/logo.png" alt="Logo Atende Pets" height="50">
-            </a>
-            
-            <div class="d-flex align-items-center ms-md-3 btn-contact-mobile"> 
-                <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
-                    target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
-                </a>    
+            <div class="d-md-none container-mobile w-100 d-flex justify-content-between align-items-center">
+                <a class="navbar-brand-mobile">
+                    <img src="img/logo.png" alt="Logo Atende Pets" height="50">
+                </a>
+
+                <div class="d-flex align-items-center btn-contact-mobile"> 
+                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
+                        target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Contato <i class="bi bi-whatsapp ms-2"></i>
+                    </a>    
+                </div>
+
+                <button class="navbar-toggler navbar-toggler-mobile" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMobile" aria-controls="navbarNavMobile" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
 
-            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="d-none d-md-flex align-items-center gap-3 ms-auto"> 
-                <a href="https://www.instagram.com/atendepets/" target="_blank" class="text-dark">
-                    <i class="bi bi-instagram fs-4"></i>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61576281224123" target="_blank" class="text-dark">
-                    <i class="bi bi-facebook fs-4"></i>
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse d-md-none" id="navbarNavMobile">
                 <ul id="menu" class="navbar-nav w-100">
                     <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="scrollToTop(event)">Home</a></li>
                     <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
@@ -138,6 +158,36 @@
                     <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
                     <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
+            </div>
+
+            <div class="d-none d-md-flex container-desktop w-100">
+                <a href="/" class="navbar-brand-desktop">
+                    <img src="img/logo.png" alt="Logo Atende Pets" height="50">
+                </a>
+                
+                <div class="collapse navbar-collapse" id="navbarNavDesktop">
+                    <ul id="menu" class="navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="scrollToTop(event)">Home</a></li>
+                        <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
+                        <li class="nav-item"><a href="#precos" class="nav-link">Preços</a></li>
+                        <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
+                        <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="navbar-cta-social-desktop"> 
+                    <div class="d-flex align-items-center gap-3"> 
+                        <a href="https://www.instagram.com/atendepets/" target="_blank" class="text-dark">
+                            <i class="bi bi-instagram fs-4"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61576281224123" target="_blank" class="text-dark">
+                            <i class="bi bi-facebook fs-4"></i>
+                        </a>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPJ2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
+                        target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
+                    </a>    
+                </div>
             </div>
         </div>
     </nav>
