@@ -138,43 +138,66 @@
             }
         }
 
-        /* Espaçamento entre seções - AINDA MAIS REDUZIDO */
+        /* Espaçamento entre seções - MÍNIMO */
         /* Removendo as margens (my-5, mb-5) das seções no HTML e controlando via CSS */
         section {
-            padding-top: 3rem; /* Padding superior padrão para seções */
-            padding-bottom: 3rem; /* Padding inferior padrão para seções */
-            margin: 0; /* Zera margens padrão do Bootstrap para melhor controle */
+            padding-top: 2rem; /* Padding superior para cada seção */
+            padding-bottom: 2rem; /* Padding inferior para cada seção */
+            margin: 0; /* Zera margens padrão do Bootstrap */
+        }
+        
+        /* Ajustes específicos para a NAVBAR e seção HOME */
+        .navbar {
+            margin-bottom: 0 !important; /* Remove totalmente a margem entre navbar e Home */
+            border-bottom: none !important; /* Remove a borda inferior para colar */
         }
 
-        /* Ajustes específicos para a seção Home/Topo */
         #topo {
             background-color: var(--bs-ocean-blue); /* Fundo azul oceano */
             color: white; /* Texto branco para contraste */
-            padding-top: 80px; /* Garante que o conteúdo não cole na navbar */
-            padding-bottom: 3rem; /* Mantém um padding inferior adequado */
+            padding-top: 0; /* Zera padding superior da seção */
+            padding-bottom: 2rem; /* Mantém um padding inferior adequado */
         }
-        /* Ajustes específicos para o conteúdo dentro da seção topo */
+
+        /* Ajustes para o conteúdo dentro da seção topo */
         #topo .container {
              padding-top: 2rem; /* Adiciona padding interno ao container do topo */
-             padding-bottom: 2rem;
+             padding-bottom: 0; /* Remove padding inferior do container para subir o conteúdo */
+             margin-top: 0; /* Garante que o container não tenha margem superior */
         }
-        #topo h2.mt-5, #topo p.mt-4, #topo .btn.mt-5 {
-            margin-top: 1.5rem !important; /* Ajusta margens internas para ficar bom com o fundo */
-            margin-bottom: 1.5rem !important;
+
+        #topo .container .row {
+            align-items: flex-start; /* Alinha o conteúdo ao topo do row */
+            padding-top: 0; /* Zera padding superior do row */
+            margin-top: 0; /* Zera margem superior do row */
+        }
+
+        #topo h2.mt-5, #topo h1.display-2, #topo p.mt-4, #topo .btn.mt-5 {
+            margin-top: 1rem !important; /* Reduz todas as margens superiores dos elementos */
+            margin-bottom: 1rem !important; /* Reduz margens inferiores também */
+        }
+
+        #topo h2.mt-5 { /* Específico para o h2 para garantir que não fique muito colado */
+            margin-top: 0 !important; /* Ou um valor bem pequeno, tipo 0.5rem */
         }
 
 
-        /* Ajustes para a navbar para reduzir o espaçamento com a seção topo */
-        .navbar.mb-5 {
-            margin-bottom: 2rem !important; /* Ou mesmo 0 para colar, dependendo do design */
+        /* Ajuste para o padding superior da primeira seção (Serviços) para compensar a navbar */
+        #servicos {
+            padding-top: 3rem; /* Garante que a primeira seção não comece colada com a Home */
         }
 
+        /* Ajuste para o footer para alinhar */
+        footer {
+            padding-top: 1rem !important; /* Reduz padding superior */
+            padding-bottom: 1rem !important; /* Reduz padding inferior */
+            margin-top: 1rem !important; /* Reduz margem superior */
+        }
     </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#menu-desktop">
-    <nav class="navbar navbar-expand-md bg-white sticky-top py-3 mb-3 border-bottom">
-        <div class="navbar-mobile d-md-none w-100">
+    <nav class="navbar navbar-expand-md bg-white sticky-top py-3 border-bottom-0"> <div class="navbar-mobile d-md-none w-100">
             <div class="container-fluid">
                 <a class="navbar-brand-mobile" href="#">
                     <img src="img/logo.png" alt="Logo Atende Pets" height="50">
@@ -246,19 +269,15 @@
     <section id="topo">
         <div class="container">
             <div class="row text-center text-md-start">
-                <div class="col-md-6 mt-3">
-                    <h2 class="mt-5 fs-5"> Aqui o seu amigo é tratado com carinho</h2>
-
-                    <h1 class="display-2 fw-bold">Atende Pets</h1>
-                    <p class="mt-4"> Na Clínica Veterinária Atende Pets, o bem-estar e a
+                <div class="col-md-6"> <h2 class="fs-5"> Aqui o seu amigo é tratado com carinho</h2> <h1 class="display-2 fw-bold">Atende Pets</h1>
+                    <p> Na Clínica Veterinária Atende Pets, o bem-estar e a
                         saúde dos
                         seus
                         animais de estimação são nossa prioridade. Localizada no coração da cidade, nossa clínica
                         oferece um ambiente acolhedor e amigável, onde nossos profissionais altamente qualificados se
                         dedicam a fornecer cuidados excepcionais para seus amigos peludos.</p>
                     <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUP2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg"
-                        target="_blank" class="mt-5 w-35 p-4 btn btn-primary">Fale com a nossa equipe!</a>
-                </div>
+                        target="_blank" class="w-35 p-4 btn btn-primary">Fale com a nossa equipe!</a> </div>
                 <div class="col-md-6">
                     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
                         type="module"></script><dotlottie-player class="m-0 m-auto float-none float-md-end"
