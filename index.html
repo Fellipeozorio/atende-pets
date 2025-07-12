@@ -74,6 +74,11 @@
                 align-items: center;
                 gap: 1rem; /* Espaçamento entre o botão e os ícones */
             }
+
+            /* Scroll padding para desktop */
+            body {
+                scroll-padding-top: 100px; /* Ajuste para desktop, altura da sua navbar */
+            }
         }
 
         /* Mobile: Logo esquerda, Botão Contato centro, Hambúrguer direita */
@@ -128,11 +133,11 @@
                 text-align: left; /* Alinha o texto do item à esquerda */
                 margin: 0.5rem 0; /* Espaçamento vertical */
             }
-        }
 
-        /* Mantemos o scroll-padding-top para as OUTRAS seções */
-        body {
-            scroll-padding-top: 100px; /* Ajuste este valor conforme a altura da sua navbar */
+            /* Scroll padding para mobile */
+            body {
+                scroll-padding-top: 150px; /* Ajuste este valor para mobile, pode ser diferente do desktop */
+            }
         }
     </style>
 </head>
@@ -144,7 +149,7 @@
                 </a>
 
                 <div class="d-flex align-items-center btn-contact-mobile"> 
-                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUPT2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
+                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUP2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg" 
                         target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
                     </a>    
                 </div>
@@ -156,10 +161,10 @@
 
             <div class="collapse navbar-collapse" id="navbarNavMobile">
                 <ul id="menu-mobile" class="navbar-nav w-100"> <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" onclick="scrollToTopAndCloseMenu(event)">Home</a></li>
-                    <li class="nav-item"><a href="#servicos" class="nav-link" onclick="closeMobileMenu()">Serviços</a></li>
-                    <li class="nav-item"><a href="#precos" class="nav-link" onclick="closeMobileMenu()">Preços</a></li>
-                    <li class="nav-item"><a href="#faq" class="nav-link" onclick="closeMobileMenu()">FAQs</a></li>
-                    <li class="nav-item"><a href="#contato" class="nav-link" onclick="closeMobileMenu()">Contato</a></li>
+                    <li class="nav-item"><a href="#servicos" class="nav-link" onclick="handleMobileNavLinkClick(event)">Serviços</a></li>
+                    <li class="nav-item"><a href="#precos" class="nav-link" onclick="handleMobileNavLinkClick(event)">Preços</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link" onclick="handleMobileNavLinkClick(event)">FAQs</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link" onclick="handleMobileNavLinkClick(event)">Contato</a></li>
                 </ul>
             </div>
         </div>
@@ -561,10 +566,30 @@
             closeMobileMenu();  // Fecha o menu mobile
         }
 
+        // Nova função para lidar com cliques nos links do menu mobile
+        function handleMobileNavLinkClick(event) {
+            event.preventDefault(); // Previne o comportamento padrão imediato do link
+            const targetId = event.currentTarget.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    // Calcula a posição de rolagem ajustada pela altura da navbar
+                    const offsetPosition = targetElement.offsetTop - navbarHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            closeMobileMenu(); // Sempre fecha o menu após o clique
+        }
+
         // Adiciona um listener para todos os links do menu mobile para fechar o menu
         document.querySelectorAll('#menu-mobile .nav-link').forEach(link => {
             if (link.getAttribute('href') !== '#') { // Evita fechar ao clicar em '#' puro (Home)
-                link.addEventListener('click', closeMobileMenu);
+                link.addEventListener('click', handleMobileNavLinkClick); // Usa a nova função
             }
         });
 
