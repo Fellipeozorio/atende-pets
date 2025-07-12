@@ -227,6 +227,60 @@
             padding-bottom: 1rem !important; /* Reduz padding inferior */
             margin-top: 1rem !important; /* Reduz margem superior */
         }
+
+                /* Para garantir que os itens do carrossel mobile não se sobreponham */
+        #carouselServicosMobile .carousel-item {
+            min-height: 350px; /* Um valor mínimo para a altura do slide, ajuste se necessário */
+            display: flex; /* Garante que flexbox esteja ativo no item */
+            flex-direction: column; /* Organiza o conteúdo em coluna */
+            align-items: center; /* Centraliza horizontalmente */
+            justify-content: flex-start; /* Alinha o conteúdo ao topo do item */
+            padding-bottom: 2rem; /* Adiciona um padding inferior para o botão não ficar tão na borda */
+        }
+        
+        /* Opcional: Ajusta a altura da imagem se ela estiver grande demais no mobile */
+        #carouselServicosMobile .carousel-item img {
+            margin-bottom: 1rem; /* Espaçamento abaixo da imagem */
+        }
+        
+        /* Garante que o parágrafo preencha o espaço disponível e empurre o botão para baixo */
+        #carouselServicosMobile .carousel-item p.small {
+            flex-grow: 1;
+            margin-bottom: 1rem; /* Espaçamento abaixo do parágrafo */
+        }
+        
+        /* Ajusta o espaçamento dos botões de navegação do carrossel mobile para que não fiquem escondidos */
+        #carouselServicosMobile .carousel-control-prev,
+        #carouselServicosMobile .carousel-control-next {
+            width: 10%; /* Reduz a largura para que o botão não cubra muito o conteúdo */
+            top: 50%; /* Centraliza verticalmente */
+            transform: translateY(-50%);
+        }
+        
+        #carouselServicosMobile .carousel-control-prev {
+            left: -15px; /* Move um pouco para fora para não sobrepor o conteúdo */
+        }
+        
+        #carouselServicosMobile .carousel-control-next {
+            right: -15px; /* Move um pouco para fora */
+        }
+        
+        /* Ajuste dos indicadores do carrossel mobile para que não fiquem escondidos */
+        #carouselServicosMobile .carousel-indicators {
+            position: absolute;
+            bottom: 0; /* Move para o fundo */
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding-bottom: 0.5rem; /* Um pouco de padding para não ficar colado */
+        }
+        
+        /* Opcional: Esconde indicadores para carrossel desktop se quiser que só apareçam no mobile */
+        /*
+        .d-none.d-md-block .carousel-indicators {
+            display: none !important;
+        }
+        */
     </style>
 </head>
 
@@ -418,7 +472,8 @@
                 </button>
             </div>
 
-            <div id="carouselServicosMobile" class="carousel slide d-md-none mt-5"> <div class="carousel-indicators">
+            <div id="carouselServicosMobile" class="carousel slide d-md-none mt-5">
+                <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="0"
                         class="active"></button>
                     <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="1"></button>
