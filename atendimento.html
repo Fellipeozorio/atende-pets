@@ -8,12 +8,242 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Atendimento Clínico - Atende Pets</title>
     <style>
-        /* COPIE E COLE TODO O BLOCO <style> DA SUA PÁGINA index.html AQUI */
-        :root { --bs-ocean-blue: #3152b7; }
-        body { scroll-padding-top: 100px; }
-        .navbar-nav .nav-link.active { background-color: var(--bs-primary); color: white !important; border-radius: 0.25rem; padding: 0.5rem 1rem; }
-        .service-header { background-color: var(--bs-ocean-blue); color: white; padding: 3rem 0; }
-        section { padding: 4rem 0; }
+    /* Cores personalizadas (mantenha esta parte intacta) */
+    :root {
+        --bs-ocean-blue: #3152b7; /* Tom de azul oceano solicitado */
+    }
+    
+    /* Regra para a faixa azul do título da seção de contato */
+    .contact-title-bar {
+        background-color: var(--bs-ocean-blue);
+        color: white; /* Texto branco para o título sobre a faixa azul */
+        padding-top: 2.5rem; /* Espaçamento interno superior da faixa */
+        padding-bottom: 2.5rem; /* Espaçamento interno inferior da faixa */
+        margin-bottom: 3rem; /* Espaçamento entre a faixa e o conteúdo dos cards */
+    }
+    
+    .contact-title-bar h2 {
+        margin-bottom: 0 !important; /* Remove margem inferior do h2 dentro da faixa */
+    }
+    
+    /* Garante que o fundo da seção de contato seja branco e o texto padrão escuro */
+    #contato {
+        background-color: white !important; /* Fundo branco para a seção de contato */
+        color: var(--bs-body-color) !important; /* Texto padrão (escuro) para a seção */
+    }
+    
+    #contato .card {
+        background-color: white !important; /* Garante que os cards internos sejam brancos */
+        color: var(--bs-body-color) !important; /* Cor do texto padrão para os cards brancos */
+    }
+    
+    #contato .card .text-muted {
+        color: #6c757d !important; /* Cor cinza para texto muted dentro do card branco */
+    }
+    
+    #contato .card .text-primary {
+        color: var(--bs-primary) !important; /* Garante que ícones primários mantenham a cor padrão do tema (azul) */
+    }
+
+    /* Indicadores reposicionados */
+    .carousel-indicators {
+        bottom: -30px;
+    }
+    
+    /* Indicadores personalizados */
+    .carousel-indicators button {
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 50% !important;
+        background-color: var(--bs-primary) !important;
+        opacity: 0.3 !important;
+        border: none !important;
+        margin: 0 5px !important;
+        transition: opacity 0.3s ease !important;
+    }
+    
+    .carousel-indicators .active {
+        opacity: 1 !important;
+        background-color: var(--bs-primary) !important;
+    }
+
+    /* CSS Adicional para o Destaque do Menu Ativo */
+    .navbar-nav .nav-link.active {
+        background-color: var(--bs-primary);
+        color: white !important;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-nav .nav-link:not(.active) {
+        color: var(--bs-body-color);
+    }
+    
+    /* Desktop: Logo esquerda, Menu centralizado, Botão/Redes direita */
+    @media (min-width: 768px) {
+        .navbar-desktop .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand-desktop {
+            margin-right: auto;
+        }
+
+        #navbarNavDesktop {
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        #menu-desktop .nav-item {
+            margin: 0 1rem;
+        }
+
+        .navbar-cta-social-desktop {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Scroll padding para desktop */
+        body {
+            scroll-padding-top: 100px;
+        }
+    }
+
+    /* Mobile: Logo esquerda, Botão Contato centro, Hambúrguer direita */
+    @media (max-width: 767.98px) {
+        .navbar-mobile .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: var(--bs-gutter-x, 0.75rem);
+            padding-right: var(--bs-gutter-x, 0.75rem);
+        }
+
+        .navbar-desktop {
+            display: none !important;
+        }
+
+        .navbar-brand-mobile {
+            order: 1;
+            margin-right: auto;
+            padding: 0;
+        }
+        .navbar-brand-mobile img {
+            margin: 0;
+        }
+
+        .btn-contact-mobile {
+            order: 2;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .navbar-toggler-mobile {
+            order: 3;
+            margin-left: auto !important;
+            margin-right: 0;
+        }
+
+        #navbarNavMobile {
+            order: 4;
+            flex-basis: 100%;
+        }
+        #navbarNavMobile .navbar-nav {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        #navbarNavMobile .nav-item {
+            text-align: left;
+            margin: 0.5rem 0;
+        }
+
+        /* Scroll padding para mobile */
+        body {
+            scroll-padding-top: 150px;
+        }
+    }
+
+    /* Espaçamento entre seções */
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin: 0;
+    }
+    
+    /* Ajustes específicos para a NAVBAR e seção HOME */
+    .navbar {
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    #topo {
+        background-color: var(--bs-ocean-blue);
+        color: white;
+        padding-top: 3rem; /* Ajuste para dar mais espaço no topo */
+        padding-bottom: 3rem;
+    }
+
+    #sobre {
+        background-color: #f8f9fa; /* Um cinza bem claro para diferenciar */
+    }
+
+    /* Para garantir que os itens do carrossel mobile não se sobreponham */
+    #carouselServicosMobile .carousel-item {
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-bottom: 2rem;
+    }
+    
+    #carouselServicosMobile .carousel-item img {
+        margin-bottom: 1rem;
+    }
+    
+    #carouselServicosMobile .carousel-item p.small {
+        flex-grow: 1;
+        margin-bottom: 1rem;
+    }
+    
+    #carouselServicosMobile .carousel-control-prev,
+    #carouselServicosMobile .carousel-control-next {
+        width: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    #carouselServicosMobile .carousel-control-prev {
+        left: -15px;
+    }
+    
+    #carouselServicosMobile .carousel-control-next {
+        right: -15px;
+    }
+    
+    #carouselServicosMobile .carousel-indicators {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    /* Estilo para links clicáveis na seção de contato */
+    #contato a {
+        text-decoration: none;
+        color: inherit;
+    }
+    #contato a:hover {
+        text-decoration: underline;
+        color: var(--bs-primary);
+    }
+        
     </style>
 </head>
 
