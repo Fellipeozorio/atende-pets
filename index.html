@@ -182,25 +182,10 @@
         margin: 0;
     }
     
-       /* --- ESTILO DA LINHA FINA ABAIXO DO MENU --- */
-    
-    /* Prepara o container do menu para posicionar a linha */
-    .navbar-desktop .container {
-        position: relative;
-    }
-    
-    /* Cria e estiliza a linha usando um pseudo-elemento */
-    .navbar-desktop .container::after {
-        content: ''; /* Essencial para o pseudo-elemento ser criado */
-        display: block;
-        width: 100%; /* A linha terá 100% da largura do container (e não da tela) */
-        height: 2px; /* Linha mais fina (ajuste se desejar) */
-        background-color: var(--bs-ocean-blue); /* Cor da linha */
-        
-        /* Posicionamento da linha */
-        position: absolute;
-        bottom: -24px; /* Distância da linha para o menu. Ajuste este valor se quiser mais ou menos espaço */
-        left: 0;
+    /* Ajustes específicos para a NAVBAR e seção HOME */
+    .navbar {
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
     }
 
     #topo {
