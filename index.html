@@ -47,253 +47,221 @@
     #contato .card .text-primary {
         color: var(--bs-primary) !important; /* Garante que ícones primários mantenham a cor padrão do tema (azul) */
     }
+
+    /* Indicadores reposicionados */
+    .carousel-indicators {
+        bottom: -30px;
+    }
     
+    /* Indicadores personalizados */
+    .carousel-indicators button {
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 50% !important;
+        background-color: var(--bs-primary) !important;
+        opacity: 0.3 !important;
+        border: none !important;
+        margin: 0 5px !important;
+        transition: opacity 0.3s ease !important;
+    }
+    
+    .carousel-indicators .active {
+        opacity: 1 !important;
+        background-color: var(--bs-primary) !important;
+    }
 
+    /* CSS Adicional para o Destaque do Menu Ativo */
+    .navbar-nav .nav-link.active {
+        background-color: var(--bs-primary);
+        color: white !important;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+    }
 
-        /* Indicadores reposicionados */
-        .carousel-indicators {
-            bottom: -30px;
-        }
-        
-        /* Indicadores personalizados */
-        .carousel-indicators button {
-            width: 12px !important;
-            height: 12px !important;
-            border-radius: 50% !important;
-            background-color: var(--bs-primary) !important;
-            opacity: 0.3 !important;
-            border: none !important;
-            margin: 0 5px !important;
-            transition: opacity 0.3s ease !important;
-        }
-        
-        .carousel-indicators .active {
-            opacity: 1 !important;
-            background-color: var(--bs-primary) !important;
-        }
-
-        /* CSS Adicional para o Destaque do Menu Ativo */
-        .navbar-nav .nav-link.active {
-            background-color: var(--bs-primary);
-            color: white !important;
-            border-radius: 0.25rem;
-            padding: 0.5rem 1rem;
-        }
-
-        .navbar-nav .nav-link:not(.active) {
-            color: var(--bs-body-color);
-        }
-        
-        /* Desktop: Logo esquerda, Menu centralizado, Botão/Redes direita */
-        @media (min-width: 768px) {
-            .navbar-desktop .container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .navbar-brand-desktop {
-                margin-right: auto;
-            }
-
-            #navbarNavDesktop {
-                flex-grow: 1;
-                justify-content: center;
-            }
-
-            #menu-desktop .nav-item {
-                margin: 0 1rem;
-            }
-
-            .navbar-cta-social-desktop {
-                margin-left: auto;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            /* Scroll padding para desktop */
-            body {
-                scroll-padding-top: 100px;
-            }
+    .navbar-nav .nav-link:not(.active) {
+        color: var(--bs-body-color);
+    }
+    
+    /* Desktop: Logo esquerda, Menu centralizado, Botão/Redes direita */
+    @media (min-width: 768px) {
+        .navbar-desktop .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Mobile: Logo esquerda, Botão Contato centro, Hambúrguer direita */
-        @media (max-width: 767.98px) {
-            .navbar-mobile .container-fluid {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding-left: var(--bs-gutter-x, 0.75rem);
-                padding-right: var(--bs-gutter-x, 0.75rem);
-            }
-
-            .navbar-desktop {
-                display: none !important;
-            }
-
-            .navbar-brand-mobile {
-                order: 1;
-                margin-right: auto;
-                padding: 0;
-            }
-            .navbar-brand-mobile img {
-                margin: 0;
-            }
-
-            .btn-contact-mobile {
-                order: 2;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-
-            .navbar-toggler-mobile {
-                order: 3;
-                margin-left: auto !important;
-                margin-right: 0;
-            }
-
-            #navbarNavMobile {
-                order: 4;
-                flex-basis: 100%;
-            }
-            #navbarNavMobile .navbar-nav {
-                width: 100%;
-                margin-top: 1rem;
-            }
-            #navbarNavMobile .nav-item {
-                text-align: left;
-                margin: 0.5rem 0;
-            }
-
-            /* Scroll padding para mobile */
-            body {
-                scroll-padding-top: 150px;
-            }
+        .navbar-brand-desktop {
+            margin-right: auto;
         }
 
-        /* Espaçamento entre seções - MÍNIMO */
-        /* Removendo as margens (my-5, mb-5) das seções no HTML e controlando via CSS */
-        section {
-            padding-top: 2rem; /* Padding superior para cada seção */
-            padding-bottom: 2rem; /* Padding inferior para cada seção */
-            margin: 0; /* Zera margens padrão do Bootstrap */
-        }
-        
-        /* Ajustes específicos para a NAVBAR e seção HOME */
-        .navbar {
-            margin-bottom: 0 !important; /* Remove totalmente a margem entre navbar e Home */
-            border-bottom: none !important; /* Remove a borda inferior para colar */
-        }
-
-        #topo {
-            background-color: var(--bs-ocean-blue); /* Fundo azul oceano */
-            color: white; /* Texto branco para contraste */
-            padding-top: 0; /* Zera padding superior da seção */
-            padding-bottom: 2rem; /* Mantém um padding inferior adequado */
-        }
-
-        /* Ajustes para o conteúdo dentro da seção topo */
-        #topo .container {
-             padding-top: 2rem; /* Adiciona padding interno ao container do topo */
-             padding-bottom: 0; /* Remove padding inferior do container para subir o conteúdo */
-             margin-top: 0; /* Garante que o container não tenha margem superior */
-        }
-
-        #topo .container .row {
-            align-items: flex-start; /* Alinha o conteúdo ao topo do row */
-            padding-top: 0; /* Zera padding superior do row */
-            margin-top: 0; /* Zera margem superior do row */
-        }
-
-        #topo h2.mt-5, #topo h1.display-2, #topo p.mt-4, #topo .btn.mt-5 {
-            margin-top: 1rem !important; /* Reduz todas as margens superiores dos elementos */
-            margin-bottom: 1rem !important; /* Reduz margens inferiores também */
-        }
-
-        #topo h2.mt-5 { /* Específico para o h2 para garantir que não fique muito colado */
-            margin-top: 0 !important; /* Ou um valor bem pequeno, tipo 0.5rem */
-        }
-
-
-        /* Ajuste para o padding superior da primeira seção (Serviços) para compensar a navbar */
-        #servicos {
-            padding-top: 3rem; /* Garante que a primeira seção não comece colada com a Home */
-        }
-
-        /* Ajuste para o footer para alinhar */
-        footer {
-            padding-top: 1rem !important; /* Reduz padding superior */
-            padding-bottom: 1rem !important; /* Reduz padding inferior */
-            margin-top: 1rem !important; /* Reduz margem superior */
-        }
-
-                /* Para garantir que os itens do carrossel mobile não se sobreponham */
-        #carouselServicosMobile .carousel-item {
-            min-height: 350px; /* Um valor mínimo para a altura do slide, ajuste se necessário */
-            display: flex; /* Garante que flexbox esteja ativo no item */
-            flex-direction: column; /* Organiza o conteúdo em coluna */
-            align-items: center; /* Centraliza horizontalmente */
-            justify-content: flex-start; /* Alinha o conteúdo ao topo do item */
-            padding-bottom: 2rem; /* Adiciona um padding inferior para o botão não ficar tão na borda */
-        }
-        
-        /* Opcional: Ajusta a altura da imagem se ela estiver grande demais no mobile */
-        #carouselServicosMobile .carousel-item img {
-            margin-bottom: 1rem; /* Espaçamento abaixo da imagem */
-        }
-        
-        /* Garante que o parágrafo preencha o espaço disponível e empurre o botão para baixo */
-        #carouselServicosMobile .carousel-item p.small {
+        #navbarNavDesktop {
             flex-grow: 1;
-            margin-bottom: 1rem; /* Espaçamento abaixo do parágrafo */
+            justify-content: center;
         }
-        
-        /* Ajusta o espaçamento dos botões de navegação do carrossel mobile para que não fiquem escondidos */
-        #carouselServicosMobile .carousel-control-prev,
-        #carouselServicosMobile .carousel-control-next {
-            width: 10%; /* Reduz a largura para que o botão não cubra muito o conteúdo */
-            top: 50%; /* Centraliza verticalmente */
-            transform: translateY(-50%);
+
+        #menu-desktop .nav-item {
+            margin: 0 1rem;
         }
-        
-        #carouselServicosMobile .carousel-control-prev {
-            left: -15px; /* Move um pouco para fora para não sobrepor o conteúdo */
+
+        .navbar-cta-social-desktop {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        
-        #carouselServicosMobile .carousel-control-next {
-            right: -15px; /* Move um pouco para fora */
+
+        /* Scroll padding para desktop */
+        body {
+            scroll-padding-top: 100px;
         }
-        
-        /* Ajuste dos indicadores do carrossel mobile para que não fiquem escondidos */
-        #carouselServicosMobile .carousel-indicators {
-            position: absolute;
-            bottom: 0; /* Move para o fundo */
-            left: 0;
-            right: 0;
-            margin: 0;
-            padding-bottom: 0.5rem; /* Um pouco de padding para não ficar colado */
+    }
+
+    /* Mobile: Logo esquerda, Botão Contato centro, Hambúrguer direita */
+    @media (max-width: 767.98px) {
+        .navbar-mobile .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: var(--bs-gutter-x, 0.75rem);
+            padding-right: var(--bs-gutter-x, 0.75rem);
         }
-        
-        /* Opcional: Esconde indicadores para carrossel desktop se quiser que só apareçam no mobile */
-        /*
-        .d-none.d-md-block .carousel-indicators {
+
+        .navbar-desktop {
             display: none !important;
         }
-        */
+
+        .navbar-brand-mobile {
+            order: 1;
+            margin-right: auto;
+            padding: 0;
+        }
+        .navbar-brand-mobile img {
+            margin: 0;
+        }
+
+        .btn-contact-mobile {
+            order: 2;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .navbar-toggler-mobile {
+            order: 3;
+            margin-left: auto !important;
+            margin-right: 0;
+        }
+
+        #navbarNavMobile {
+            order: 4;
+            flex-basis: 100%;
+        }
+        #navbarNavMobile .navbar-nav {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        #navbarNavMobile .nav-item {
+            text-align: left;
+            margin: 0.5rem 0;
+        }
+
+        /* Scroll padding para mobile */
+        body {
+            scroll-padding-top: 150px;
+        }
+    }
+
+    /* Espaçamento entre seções */
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin: 0;
+    }
+    
+    /* Ajustes específicos para a NAVBAR e seção HOME */
+    .navbar {
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    #topo {
+        background-color: var(--bs-ocean-blue);
+        color: white;
+        padding-top: 3rem; /* Ajuste para dar mais espaço no topo */
+        padding-bottom: 3rem;
+    }
+
+    #sobre {
+        background-color: #f8f9fa; /* Um cinza bem claro para diferenciar */
+    }
+
+    /* Para garantir que os itens do carrossel mobile não se sobreponham */
+    #carouselServicosMobile .carousel-item {
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-bottom: 2rem;
+    }
+    
+    #carouselServicosMobile .carousel-item img {
+        margin-bottom: 1rem;
+    }
+    
+    #carouselServicosMobile .carousel-item p.small {
+        flex-grow: 1;
+        margin-bottom: 1rem;
+    }
+    
+    #carouselServicosMobile .carousel-control-prev,
+    #carouselServicosMobile .carousel-control-next {
+        width: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    #carouselServicosMobile .carousel-control-prev {
+        left: -15px;
+    }
+    
+    #carouselServicosMobile .carousel-control-next {
+        right: -15px;
+    }
+    
+    #carouselServicosMobile .carousel-indicators {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding-bottom: 0.5rem;
+    }
+
+    /* Estilo para links clicáveis na seção de contato */
+    #contato a {
+        text-decoration: none;
+        color: inherit;
+    }
+    #contato a:hover {
+        text-decoration: underline;
+        color: var(--bs-primary);
+    }
+        
     </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#menu-desktop">
-    <nav class="navbar navbar-expand-md bg-white sticky-top py-3 border-bottom-0"> <div class="navbar-mobile d-md-none w-100">
+    <nav class="navbar navbar-expand-md bg-white sticky-top py-3 border-bottom">
+        <div class="navbar-mobile d-md-none w-100">
             <div class="container-fluid">
                 <a class="navbar-brand-mobile" href="#">
                     <img src="img/logo.png" alt="Logo Atende Pets" height="50">
                 </a>
 
                 <div class="d-flex align-items-center btn-contact-mobile">
-                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUP2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg"
-                        target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
+                    <a href="https://api.whatsapp.com/send?phone=5531984073910"
+                        target="_blank" class="btn btn-primary px-3 py-2 d-inline-flex align-items-center">
+                        <i class="bi bi-whatsapp me-2"></i> Contato
                     </a>
                 </div>
 
@@ -308,6 +276,8 @@
                 <ul id="menu-mobile" class="navbar-nav w-100">
                     <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"
                             onclick="scrollToTopAndCloseMenu(event)">Home</a></li>
+                    <li class="nav-item"><a href="#sobre" class="nav-link"
+                            onclick="handleMobileNavLinkClick(event)">Sobre Nós</a></li>
                     <li class="nav-item"><a href="#servicos" class="nav-link"
                             onclick="handleMobileNavLinkClick(event)">Serviços</a></li>
                     <li class="nav-item"><a href="#precos" class="nav-link"
@@ -322,7 +292,7 @@
 
         <div class="navbar-desktop d-none d-md-flex w-100">
             <div class="container">
-                <a href="/" class="navbar-brand-desktop">
+                <a href="#" class="navbar-brand-desktop" onclick="scrollToTop(event)">
                     <img src="img/logo.png" alt="Logo Atende Pets" height="50">
                 </a>
 
@@ -330,6 +300,7 @@
                     <ul id="menu-desktop" class="navbar-nav">
                         <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"
                                 onclick="scrollToTop(event)">Home</a></li>
+                        <li class="nav-item"><a href="#sobre" class="nav-link">Sobre Nós</a></li>
                         <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
                         <li class="nav-item"><a href="#precos" class="nav-link">Preços</a></li>
                         <li class="nav-item"><a href="#faq" class="nav-link">FAQs</a></li>
@@ -347,8 +318,9 @@
                             <i class="bi bi-facebook fs-4"></i>
                         </a>
                     </div>
-                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUP2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg"
-                        target="_blank" class="btn btn-outline-primary px-3 py-2 d-inline-flex align-items-center"> Entre em contato <i class="bi bi-whatsapp ms-2"></i>
+                    <a href="https://api.whatsapp.com/send?phone=5531984073910"
+                        target="_blank" class="btn btn-primary px-3 py-2 d-inline-flex align-items-center">
+                        <i class="bi bi-whatsapp me-2"></i> Agende uma Consulta
                     </a>
                 </div>
             </div>
@@ -357,22 +329,56 @@
     
     <section id="topo">
         <div class="container">
-            <div class="row text-center text-md-start">
-                <div class="col-md-6"> <h2 class="fs-5"> Aqui o seu amigo é tratado com carinho</h2> <h1 class="display-2 fw-bold">Atende Pets</h1>
-                    <p> Na Clínica Veterinária Atende Pets, o bem-estar e a
-                        saúde dos
-                        seus
-                        animais de estimação são nossa prioridade. Localizada no coração da cidade, nossa clínica
-                        oferece um ambiente acolhedor e amigável, onde nossos profissionais altamente qualificados se
-                        dedicam a fornecer cuidados excepcionais para seus amigos peludos.</p>
-                    <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUP2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg"
-                        target="_blank" class="w-35 p-4 btn btn-primary">Fale com a nossa equipe!</a> </div>
+            <div class="row text-center text-md-start align-items-center">
                 <div class="col-md-6">
-                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                        type="module"></script><dotlottie-player class="m-0 m-auto float-none float-md-end"
-                        src="https://lottie.host/6663d84e-894d-4cfc-9e34-a7ca5383f092/VAgahkv33p.json"
-                        background="transparent" speed="1" style="max-width: 70%;" direction="1" playMode="normal"
-                        loop autoplay></dotlottie-player>
+                    <h2 class="fs-5">Aqui o seu amigo é tratado com carinho</h2>
+                    <h1 class="display-2 fw-bold">Atende Pets</h1>
+                    <p class="lead">Cuidado completo e atendimento veterinário de excelência para cães e gatos em Belo Horizonte. Nosso compromisso é com a saúde e o bem-estar do seu melhor amigo.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5531984073910"
+                        target="_blank" class="btn btn-light btn-lg mt-4 d-inline-flex align-items-center">
+                        <i class="bi bi-whatsapp me-2"></i> Agende Agora
+                    </a>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <img src="https://images.unsplash.com/photo-1583337130417-2346a1e724a8?q=80&w=1974&auto=format&fit=crop"
+                         class="img-fluid rounded-3 shadow" alt="Cachorro sorrindo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1974&auto=format&fit=crop" class="img-fluid rounded-3 shadow-sm" alt="Nossa Equipe Veterinária">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold">Apaixonados por animais, dedicados a cuidar</h2>
+                    <p class="text-muted mt-3">A Atende Pets nasceu da união de profissionais que compartilham um amor incondicional por animais. Nossa missão vai além do tratamento: buscamos criar um ambiente acolhedor onde pets e tutores se sintam seguros e compreendidos. Acreditamos que cada animal é único e merece um cuidado personalizado e repleto de carinho.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-patch-check-fill text-primary fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Equipe Qualificada</h5>
+                                <p class="mb-0 text-muted">Veterinários experientes e em constante atualização.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-heart-pulse-fill text-primary fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Atendimento Humanizado</h5>
+                                <p class="mb-0 text-muted">Tratamos seu pet como se fosse nosso, com respeito e empatia.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-camera-video-fill text-primary fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Tecnologia de Ponta</h5>
+                                <p class="mb-0 text-muted">Equipamentos modernos para diagnósticos precisos.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -380,9 +386,9 @@
 
     <section id="servicos">
         <div class="container">
-            <div class="row pt-5 mt-5">
+            <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="display-5 fw-bold">Serviços</h2>
+                    <h2 class="display-5 fw-bold">Nossos Serviços</h2>
                 </div>
             </div>
 
@@ -399,23 +405,23 @@
                         <div class="row justify-content-center">
                             <div class="col-md-4 text-center d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/atendimento.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3 fs-4">Atendimento</h2>
-                                <p class="small text-muted flex-grow-1">Protegemos seu pet com um calendário de vacinação atualizado.</p>
+                                    style="width:150px;height:150px;object-fit:cover;">
+                                <h2 class="mt-3 fs-4">Atendimento Clínico</h2>
+                                <p class="small text-muted flex-grow-1">Consultas gerais e especializadas para um diagnóstico preciso e cuidado completo.</p>
                                 <a href="atendimento.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                             <div class="col-md-4 text-center d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/exame.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
+                                    style="width:150px;height:150px;object-fit:cover;">
                                 <h2 class="mt-3 fs-4">Exames</h2>
-                                <p class="small text-muted flex-grow-1">Atendimento veterinário durante 24 horas para emergências.</p>
+                                <p class="small text-muted flex-grow-1">Laboratório e exames de imagem para um diagnóstico rápido e preciso.</p>
                                 <a href="exames.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                             <div class="col-md-4 text-center d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/cirurgia.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
+                                    style="width:150px;height:150px;object-fit:cover;">
                                 <h2 class="mt-3 fs-4">Cirurgias</h2>
-                                <p class="small text-muted flex-grow-1">Cirurgias para cães e gatos.</p>
+                                <p class="small text-muted flex-grow-1">Procedimentos cirúrgicos realizados com segurança e tecnologia de ponta.</p>
                                 <a href="cirurgias.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                         </div>
@@ -425,23 +431,23 @@
                         <div class="row justify-content-center">
                             <div class="col-md-4 text-center d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/vacina.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
+                                    style="width:150px;height:150px;object-fit:cover;">
                                 <h2 class="mt-3 fs-4">Vacinas</h2>
-                                <p class="small text-muted flex-grow-1">Vacinas para cães e gatos com controle veterinário.</p>
+                                <p class="small text-muted flex-grow-1">Proteja seu pet com nosso calendário de vacinação completo e atualizado.</p>
                                 <a href="vacinas.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                             <div class="col-md-4 text-center d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/farmacia.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
-                                <h2 class="mt-3 fs-4">Medicamentos</h2>
-                                <p class="small text-muted flex-grow-1">Medicamentos para diversas condições.</p>
+                                    style="width:150px;height:150px;object-fit:cover;">
+                                <h2 class="mt-3 fs-4">Farmácia Pet</h2>
+                                <p class="small text-muted flex-grow-1">Ampla variedade de medicamentos e suplementos para o tratamento do seu pet.</p>
                                 <a href="medicamentos.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                             <div class="col-md-4 text-center d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/racao.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
+                                    style="width:150px;height:150px;object-fit:cover;">
                                 <h2 class="mt-3 fs-4">Rações</h2>
-                                <p class="small text-muted flex-grow-1">Rações para diferentes fases e raças.</p>
+                                <p class="small text-muted flex-grow-1">As melhores marcas de rações, incluindo opções terapêuticas e para necessidades especiais.</p>
                                 <a href="racoes.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                         </div>
@@ -451,9 +457,9 @@
                         <div class="row justify-content-center text-center">
                             <div class="col-md-4 d-flex flex-column align-items-center mb-4">
                                 <img class="rounded-circle border shadow p-3" src="img/acessorios.PNG"
-                                    style="width:150px;height:150px;object-fit:contain;">
+                                    style="width:150px;height:150px;object-fit:cover;">
                                 <h2 class="mt-3 fs-4">Acessórios</h2>
-                                <p class="small text-muted flex-grow-1">Brinquedos, roupas e muito mais.</p>
+                                <p class="small text-muted flex-grow-1">Tudo para o conforto e diversão do seu amigo: brinquedos, coleiras, roupas e mais.</p>
                                 <a href="acessorios.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                             </div>
                         </div>
@@ -471,7 +477,7 @@
                     <span class="visually-hidden">Próximo</span>
                 </button>
             </div>
-
+            
             <div id="carouselServicosMobile" class="carousel slide d-md-none mt-5">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselServicosMobile" data-bs-slide-to="0"
@@ -487,57 +493,51 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/atendimento.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3 fs-4">Atendimento</h2>
-                        <p class="small text-muted flex-grow-1">Protegemos seu pet com um calendário de vacinação atualizado.</p>
+                            style="width:150px;height:150px;object-fit:cover;">
+                        <h2 class="mt-3 fs-4">Atendimento Clínico</h2>
+                        <p class="small text-muted flex-grow-1">Consultas gerais e especializadas para um diagnóstico preciso e cuidado completo.</p>
                         <a href="atendimento.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
-
                     <div class="carousel-item text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/exame.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
+                            style="width:150px;height:150px;object-fit:cover;">
                         <h2 class="mt-3 fs-4">Exames</h2>
-                        <p class="small text-muted flex-grow-1">Atendimento veterinário durante 24 horas para emergências.</p>
+                        <p class="small text-muted flex-grow-1">Laboratório e exames de imagem para um diagnóstico rápido e preciso.</p>
                         <a href="exames.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
-
-                    <div class="carousel-item text-center d-flex flex-column align-items-center">
+                     <div class="carousel-item text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/cirurgia.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
+                            style="width:150px;height:150px;object-fit:cover;">
                         <h2 class="mt-3 fs-4">Cirurgias</h2>
-                        <p class="small text-muted flex-grow-1">Cirurgias para cães e gatos.</p>
+                        <p class="small text-muted flex-grow-1">Procedimentos cirúrgicos realizados com segurança e tecnologia de ponta.</p>
                         <a href="cirurgias.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
-
                     <div class="carousel-item text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/vacina.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
+                            style="width:150px;height:150px;object-fit:cover;">
                         <h2 class="mt-3 fs-4">Vacinas</h2>
-                        <p class="small text-muted flex-grow-1">Vacinas para cães e gatos com controle veterinário.</p>
+                        <p class="small text-muted flex-grow-1">Proteja seu pet com nosso calendário de vacinação completo e atualizado.</p>
                         <a href="vacinas.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
-
                     <div class="carousel-item text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/farmacia.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
-                        <h2 class="mt-3 fs-4">Medicamentos</h2>
-                        <p class="small text-muted flex-grow-1">Medicamentos para diversas condições.</p>
+                            style="width:150px;height:150px;object-fit:cover;">
+                        <h2 class="mt-3 fs-4">Farmácia Pet</h2>
+                        <p class="small text-muted flex-grow-1">Ampla variedade de medicamentos e suplementos para o tratamento do seu pet.</p>
                         <a href="medicamentos.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
-
                     <div class="carousel-item text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/racao.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
+                            style="width:150px;height:150px;object-fit:cover;">
                         <h2 class="mt-3 fs-4">Rações</h2>
-                        <p class="small text-muted flex-grow-1">Rações para diferentes fases e raças.</p>
+                        <p class="small text-muted flex-grow-1">As melhores marcas de rações, incluindo opções terapêuticas e para necessidades especiais.</p>
                         <a href="racoes.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
-
                     <div class="carousel-item text-center d-flex flex-column align-items-center">
                         <img class="rounded-circle border shadow p-3" src="img/acessorios.PNG"
-                            style="width:150px;height:150px;object-fit:contain;">
+                            style="width:150px;height:150px;object-fit:cover;">
                         <h2 class="mt-3 fs-4">Acessórios</h2>
-                        <p class="small text-muted flex-grow-1">Brinquedos, roupas e muito mais.</p>
+                        <p class="small text-muted flex-grow-1">Tudo para o conforto e diversão do seu amigo: brinquedos, coleiras, roupas e mais.</p>
                         <a href="acessorios.html" class="btn btn-outline-primary mt-auto">Saiba Mais >></a>
                     </div>
                 </div>
@@ -556,58 +556,59 @@
         </div>
     </section>
     
-    <section id="precos">
+    <section id="precos" style="background-color: #f8f9fa;">
         <div class="container">
-            <div class="pricing-header pt-5 mt-5 text-center">
-                <h2 class="display-5 fw-bold"> Preços</h2>
-                <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential
-                    customers
-                    with this Bootstrap example. It’s built with default Bootstrap components and utilities with little
-                    customization.</p>
+            <div class="pricing-header text-center">
+                <h2 class="display-5 fw-bold">Preços Transparentes</h2>
+                <p class="fs-5 text-body-secondary col-lg-8 mx-auto">Confira os valores de nossos principais serviços. Oferecemos pacotes e condições especiais para o cuidado completo do seu pet.</p>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mt-5">
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
                         <div class="card-header py-3 text-bg-primary border-primary">
                             <h4 class="my-0 fw-normal">Vacinação</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">R$80,00</h1>
+                            <h1 class="card-title pricing-card-title">R$80,00<small class="text-body-secondary fw-light">/dose</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Vacina polivalente para cães e gatos</li>
-
+                                <li>Vacina Polivalente (V8/V10)</li>
+                                <li>Vacina Antirrábica</li>
+                                <li>Controle de protocolo</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                             <a href="https://api.whatsapp.com/send?phone=5531984073910" target="_blank" class="w-100 btn btn-lg btn-primary">Agendar Vacina</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
                         <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">Emergências</h4>
+                            <h4 class="my-0 fw-normal">Consulta</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">R$200,00</h1>
+                            <h1 class="card-title pricing-card-title">R$120,00<small class="text-body-secondary fw-light">/consulta</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Atendimento veterinário emergencial 24h</li>
-
+                                <li>Análise clínica completa</li>
+                                <li>Atendimento especializado</li>
+                                <li>Retorno incluso (sob condições)</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                            <a href="https://api.whatsapp.com/send?phone=5531984073910" target="_blank" class="w-100 btn btn-lg btn-primary">Agendar Consulta</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
+                         <div class="card-header py-3 text-bg-primary border-primary">
                             <h4 class="my-0 fw-normal">Raio-X</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">R$150,00</h1>
+                            <h1 class="card-title pricing-card-title">R$150,00<small class="text-body-secondary fw-light">/exame</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
                                 <li>Exame de imagem digital</li>
+                                <li>Laudo em até 24h</li>
+                                <li>Equipamento moderno</li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contate-nos</button>
+                            <a href="https://api.whatsapp.com/send?phone=5531984073910" target="_blank" class="w-100 btn btn-lg btn-primary">Agendar Exame</a>
                         </div>
                     </div>
                 </div>
@@ -617,14 +618,14 @@
 
     <section id="faq">
         <div class="container">
-            <div class="row pt-5 mt-5">
+            <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="display-5 fw-bold">Perguntas Frequentes</h2>
                 </div>
             </div>
 
-            <div class="row mt-3 mt-5">
-                <div class="col-12">
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-8">
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -683,7 +684,7 @@
         </div>
     </section>
 
-<section id="contato">
+    <section id="contato">
         <div class="contact-title-bar text-center">
             <div class="container">
                 <h2 class="display-5 fw-bold">Entre em Contato</h2>
@@ -692,7 +693,8 @@
 
         <div class="container">
             <div class="row justify-content-center align-items-stretch">
-                <div class="col-md-6 mb-4"> <div class="card h-100 shadow-sm border-0">
+                <div class="col-md-6 mb-4">
+                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body p-4 text-center">
                             <h3 class="card-title fw-bold mb-3">Fale Conosco</h3>
                             <p class="card-text text-muted mb-4">Estamos prontos para atender você e seu pet. Tire suas dúvidas ou agende uma visita!</p>
@@ -700,11 +702,11 @@
                             <ul class="list-unstyled text-start mx-auto" style="max-width: 300px;">
                                 <li class="d-flex align-items-center mb-2">
                                     <i class="bi bi-whatsapp me-2 fs-5 text-primary"></i> 
-                                    <span>(31) 98407-3910</span>
+                                    <a href="https://api.whatsapp.com/send?phone=5531984073910" target="_blank">(31) 98407-3910</a>
                                 </li>
                                 <li class="d-flex align-items-center mb-2">
                                     <i class="bi bi-phone me-2 fs-5 text-primary"></i> 
-                                    <span>(31) 3582-9158</span>
+                                    <a href="tel:+553135829158">(31) 3582-9158</a>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <i class="bi bi-envelope me-2 fs-5 text-primary"></i> 
@@ -712,25 +714,26 @@
                                 </li>
                             </ul>
 
-                            <a href="https://api.whatsapp.com/send?phone=%2B553184073910&context=AfcnsuBGqHTryx8fSVoRgs4OP4zKMlgPu0yR5VsHXcOwH5iwzxcKZjYN9N0AiJ2h4SSR0PQx6wVhAJsYgyonL-DvxgdDUP2ToloRT-bDt-dG30yl0NPHeaaRqQNaLXMYPSYcJ1EMB2K8nETelpyABI&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawLbRSlleHRuA2FlbQIxMABicmlkETFObFpESkVTWXljVzRNdHIwAR6BWJkS0lLULuYdcGbzFsemz6CGhgUdUKVSjNi5T6UKoDv9bSWSmfa7u_jcjQ_aem_C86V0pH3WVPMGe24TiW8fg"
+                            <a href="https://api.whatsapp.com/send?phone=5531984073910"
                                 target="_blank" class="btn btn-primary btn-lg mt-4 w-75 d-inline-flex justify-content-center align-items-center">
                                 Fale no WhatsApp <i class="bi bi-whatsapp ms-2"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4"> <div class="card h-100 shadow-sm border-0">
+                <div class="col-md-6 mb-4">
+                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body p-4 text-center">
                             <h3 class="card-title fw-bold mb-3">Nosso Endereço</h3>
                             <p class="card-text text-muted mb-4">Venha nos fazer uma visita em Belo Horizonte!</p>
                             
-                            <div class="text-center mb-4">
+                            <div class="text-start mb-4 mx-auto" style="max-width: 400px;">
                                 <i class="bi bi-geo-alt-fill me-2 fs-5 text-primary"></i>
                                 <span class="fw-bold">Rua Barroso Neto, 394 - Estrela Dalva, Belo Horizonte/MG</span>
                             </div>
 
                             <div class="embed-responsive embed-responsive-16by9" style="height: 350px;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.888062973809!2d-43.99222402497677!3d-19.98801938148906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa697a552e690ff%3A0x1d3a571e4d28f090!2sRua%20Barroso%20Neto%2C%20394%20-%20Estrela%20Dalva%2C%20Belo%20Horizonte%20-%20MG%2C%2030570-070!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr2" 
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.602884179787!2d-44.0049581254399!3d-19.93271793910118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69668105779a7%3A0x28635c66b8d23425!2sR.%20Barroso%20Neto%2C%20394%20-%20Estrela%20Dalva%2C%20Belo%20Horizonte%20-%20MG%2C%2030570-070!5e0!3m2!1spt-BR!2sbr!4v1675883838383!5m2!1spt-BR!2sbr" 
                                     width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
@@ -763,7 +766,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
     
     <footer class="container pt-4 pb-2">
@@ -804,13 +807,12 @@
 
         // Nova função para lidar com cliques nos links do menu mobile
         function handleMobileNavLinkClick(event) {
-            event.preventDefault(); // Previne o comportamento padrão imediato do link
+            event.preventDefault();
             const targetId = event.currentTarget.getAttribute('href');
             if (targetId && targetId !== '#') {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    // Calcula a posição de rolagem ajustada pela altura da navbar
                     const offsetPosition = targetElement.offsetTop - navbarHeight;
 
                     window.scrollTo({
@@ -819,14 +821,18 @@
                     });
                 }
             }
-            closeMobileMenu(); // Sempre fecha o menu após o clique
+            closeMobileMenu();
         }
 
-        // Adiciona um listener para todos os links do menu mobile para fechar o menu
+        // Adiciona um listener para todos os links do menu mobile
         document.querySelectorAll('#menu-mobile .nav-link').forEach(link => {
-            if (link.getAttribute('href') !== '#') { // Evita fechar ao clicar em '#' puro (Home)
-                link.addEventListener('click', handleMobileNavLinkClick); // Usa a nova função
-            }
+             link.addEventListener('click', function(event) {
+                 if (this.getAttribute('href') === '#') {
+                     scrollToTopAndCloseMenu(event);
+                 } else {
+                     handleMobileNavLinkClick(event);
+                 }
+             });
         });
 
         // Configura o ScrollSpy para o menu desktop
